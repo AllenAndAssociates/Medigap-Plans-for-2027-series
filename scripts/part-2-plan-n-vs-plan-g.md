@@ -1,15 +1,56 @@
 # Medigap Part 2: Plan N vs Plan G
 
-Format: 6 scenes, 10 seconds each (last scene shorter), about 57s total. Same comment-GUIDE funnel as Part 1.
+Built for Google Omni: 7 scenes, each one 10 seconds or shorter, about 59s total. Same comment-GUIDE funnel as Part 1.
 
-| # | Time | Voiceover | On-screen text | Visual |
-|---|---|---|---|---|
-| 1 | 0:00–0:10 | Plan G or Plan N? On paper they look almost identical. But there are two differences, and they decide which one fits you better. | **Plan G vs Plan N** / The 2 differences that matter | Arric to camera. Split screen "G" and "N" cards. |
-| 2 | 0:10–0:20 | Quick recap from Part 1. Plan G covers the gaps Original Medicare leaves, except the Part B deductible. Pay that once a year, and G picks up the rest. | **Plan G** / You pay: Part B deductible / G pays: the rest of Medicare-approved costs | Plan G card. Checklist ticks down, one unchecked line for the Part B deductible. |
-| 3 | 0:20–0:30 | Plan N usually has a lower monthly premium. The trade-off: you still pay the Part B deductible, plus up to twenty dollars at some office visits and up to fifty at the ER. | **Plan N** / Lower premium (usually) / Up to $20 office visit copay / Up to $50 ER copay (waived if admitted) | Plan N card. Copay amounts pop in one at a time. |
-| 4 | 0:30–0:40 | Difference number two: excess charges. Some doctors can bill up to fifteen percent above Medicare's rate. Plan G covers that. Plan N does not. | **Part B excess charges** / Up to 15% above Medicare's rate / G: covered / N: not covered | Bill graphic with a "+15%" line. Green check on G, red X on N. |
-| 5 | 0:40–0:50 | So, rarely see the doctor and want a lower premium? Plan N may fit. Want predictable costs with no surprise bills? Plan G may fit. | **Plan N:** lower premium, small copays / **Plan G:** predictable costs | Two columns side by side, Arric pointing to each. |
-| 6 | 0:50–0:57 | Comment GUIDE, and I'll send you my free 2027 side-by-side comparison guide. | **Comment "GUIDE"** / Free 2027 Medigap Comparison Guide | Guide cover mockup. End card with the agency disclaimer (same as Part 1). |
+Rules for every scene:
+- Each scene is generated as its own clip. Keep it at or under its listed length.
+- Voiceover is 20 words or fewer, so it fits in under 10 seconds when spoken.
+- Add on-screen text and the disclaimer end card in the editor, not in Omni. AI-generated text often comes out garbled.
+- Paste the style block at the start of every scene prompt so the presenter and set match across clips.
+
+## Style block (paste at the start of every prompt)
+
+Vertical 9:16 video. A friendly, professional Medicare advisor in his 40s, wearing a navy blazer and an open-collar white shirt, in a bright modern office with a bookshelf and a plant behind him. Soft natural window light, shallow depth of field, warm color grade. He speaks directly to the camera in a calm, confident, conversational tone. No text, captions, logos or graphics in frame.
+
+(If Omni accepts a reference image, use the same headshot of Arric for every scene instead of describing the presenter.)
+
+## Scenes
+
+### Scene 1: Hook (8s)
+- **VO:** "Plan G or Plan N? They look almost identical. But two differences decide which one fits you." (16 words)
+- **Omni prompt:** [Style block] Medium close-up. He raises one hand, then the other, as if weighing two options, then leans slightly toward the camera on "two differences." 8 seconds.
+- **Text overlay (editor):** Plan G vs Plan N / The 2 differences that matter
+
+### Scene 2: Plan G recap (9s)
+- **VO:** "Quick recap. Plan G covers Medicare's gaps, except the Part B deductible. Pay that once, and G covers the rest." (20 words)
+- **Omni prompt:** [Style block] Medium shot. He nods reassuringly and counts off on his fingers, then gives a small open-palm gesture on "G covers the rest." Slow push-in. 9 seconds.
+- **Text overlay (editor):** Plan G / You pay: Part B deductible / G pays: the rest of Medicare-approved costs
+
+### Scene 3: Plan N premium (8s)
+- **VO:** "Plan N usually costs less each month. You still pay the Part B deductible, just like Plan G." (18 words)
+- **Omni prompt:** [Style block] Medium shot from a slightly different angle. He holds a sheet of paper, glances at it, then looks back up to the camera. 8 seconds.
+- **Text overlay (editor):** Plan N / Lower monthly premium (usually) / You pay: Part B deductible
+
+### Scene 4: Difference 1, copays (9s)
+- **VO:** "Difference one: copays. Plan N may charge up to twenty dollars per office visit, and up to fifty at the ER." (20 words)
+- **Omni prompt:** [Style block] Medium close-up. He holds up one finger on "Difference one," then speaks with measured hand gestures. 9 seconds.
+- **Text overlay (editor):** Difference #1: Copays / Up to $20 office visit / Up to $50 ER (waived if admitted)
+
+### Scene 5: Difference 2, excess charges (9s)
+- **VO:** "Difference two: excess charges. Some doctors bill up to fifteen percent above Medicare's rate. Plan G covers it. N doesn't." (20 words)
+- **Omni prompt:** [Style block] Medium close-up. He holds up two fingers on "Difference two," then gives a firm nod on "Plan G covers it" and a slight head shake on "N doesn't." 9 seconds.
+- **Text overlay (editor):** Difference #2: Excess charges / Up to 15% above Medicare's rate / G ✓ covered / N ✗ not covered
+
+### Scene 6: Which one fits (9s)
+- **VO:** "Rarely see the doctor and want a lower premium? Plan N may fit. Want predictable costs? Plan G may fit." (19 words)
+- **Omni prompt:** [Style block] Medium shot. He gestures to his left on the Plan N line and to his right on the Plan G line, as if presenting two choices. 9 seconds.
+- **Text overlay (editor):** Plan N: lower premium, small copays (left) / Plan G: predictable costs (right)
+
+### Scene 7: Call to action (7s)
+- **VO:** "Comment GUIDE, and I'll send you my free 2027 Medigap comparison guide." (12 words)
+- **Omni prompt:** [Style block] Medium close-up. He smiles warmly and points down toward the bottom of the frame, where the comments would be, then gives a friendly nod. 7 seconds.
+- **Text overlay (editor):** Comment "GUIDE" / Free 2027 Medigap Comparison Guide
+- **End card (editor, about 3s after the clip):** Guide cover mockup plus the agency disclaimer, same as Part 1.
 
 ## Reel caption
 
@@ -24,9 +65,10 @@ Comment GUIDE and I'll send you my free 2027 Medigap comparison guide.
 
 ## Production notes
 
-- The 2027 Part B deductible is usually announced in November, so the script leaves out a dollar figure. Add it to the caption or a pinned comment once CMS publishes it.
-- Excess charges are banned or limited in some states (CT, MA, MN, NY, OH, PA, RI, VT). Add an on-screen footnote in scene 4 if the audience is in one of those states.
-- Massachusetts, Minnesota and Wisconsin use their own standardized Medigap plans, so Plans G and N are not sold there.
-- Premiums vary by state, age, ZIP and carrier. Keep the "usually" in scene 3.
+- If Omni runs a clip long, trim it in the editor rather than speeding up the voiceover.
+- The 2027 Part B deductible is usually announced in November, so the script gives no dollar figure. Add it to the caption or a pinned comment once CMS publishes it.
+- Some states (CT, MA, MN, NY, OH, PA, RI, VT) ban or limit excess charges. Add a footnote to scene 5 if your audience is in one of them.
+- Massachusetts, Minnesota and Wisconsin use their own standardized Medigap plans, so Plans G and N aren't sold there.
+- Premiums vary by state, age, ZIP code and carrier, so keep "usually" in scene 3.
 - The Facebook comment-to-DM workflow triggers on "GUIDE" anywhere on the Page, so no new workflow is needed. Confirm the PDF guide covers Plan N.
-- Send for compliance review before posting, along with the Part 1 open items.
+- Get compliance review before posting.
