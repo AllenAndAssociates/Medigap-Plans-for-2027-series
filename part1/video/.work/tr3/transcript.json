@@ -1,0 +1,110 @@
+[
+  {
+    "text": "With",
+    "start": 0.14,
+    "end": 0.23,
+    "id": "w0"
+  },
+  {
+    "text": "Plan",
+    "start": 0.34,
+    "end": 0.46,
+    "id": "w1"
+  },
+  {
+    "text": "G,",
+    "start": 0.46,
+    "end": 0.6,
+    "id": "w2"
+  },
+  {
+    "text": "your",
+    "start": 0.61,
+    "end": 0.85,
+    "id": "w3"
+  },
+  {
+    "text": "only",
+    "start": 0.89,
+    "end": 1.08,
+    "id": "w4"
+  },
+  {
+    "text": "out-of-pocket",
+    "start": 1.08,
+    "end": 1.84,
+    "id": "w5"
+  },
+  {
+    "text": "medical",
+    "start": 1.84,
+    "end": 2.09,
+    "id": "w6"
+  },
+  {
+    "text": "responsibility",
+    "start": 2.17,
+    "end": 3,
+    "id": "w7"
+  },
+  {
+    "text": "is",
+    "start": 3,
+    "end": 3.2,
+    "id": "w8"
+  },
+  {
+    "text": "the",
+    "start": 3.2,
+    "end": 3.28,
+    "id": "w9"
+  },
+  {
+    "text": "small",
+    "start": 3.29,
+    "end": 3.6,
+    "id": "w10"
+  },
+  {
+    "text": "annual",
+    "start": 3.6,
+    "end": 3.97,
+    "id": "w11"
+  },
+  {
+    "text": "Medicare",
+    "start": 3.97,
+    "end": 4.48,
+    "id": "w12"
+  },
+  {
+    "text": "Part",
+    "start": 4.48,
+    "end": 4.8,
+    "id": "w13"
+  },
+  {
+    "text": "Bdeductible.",
+    "start": 4.8,
+    "end": 5.63,
+    "id": "w14"
+  },
+  {
+    "text": "That",
+    "start": 5.74,
+    "end": 5.89,
+    "id": "w15"
+  },
+  {
+    "text": "is",
+    "start": 5.89,
+    "end": 6.02,
+    "id": "w16"
+  },
+  {
+    "text": "it.",
+    "start": 6.02,
+    "end": 6.23,
+    "id": "w17"
+  }
+]

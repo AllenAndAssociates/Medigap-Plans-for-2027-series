@@ -1,0 +1,14 @@
+# secrets
+.env
+*.env
+# renders and media (large, regenerated or stored outside git)
+*.mp4
+*.mov
+*.wav
+*.mp3
+media/
+renders/
+work-*/
+node_modules/
+.DS_Store
+snapshots/

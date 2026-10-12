@@ -1,0 +1,104 @@
+[
+  {
+    "text": "Once",
+    "start": 0.02,
+    "end": 0.3,
+    "id": "w0"
+  },
+  {
+    "text": "you",
+    "start": 0.3,
+    "end": 0.53,
+    "id": "w1"
+  },
+  {
+    "text": "pay",
+    "start": 0.53,
+    "end": 0.76,
+    "id": "w2"
+  },
+  {
+    "text": "that",
+    "start": 0.76,
+    "end": 1.06,
+    "id": "w3"
+  },
+  {
+    "text": "deductible,",
+    "start": 1.25,
+    "end": 1.96,
+    "id": "w4"
+  },
+  {
+    "text": "all",
+    "start": 2.03,
+    "end": 2.26,
+    "id": "w5"
+  },
+  {
+    "text": "other",
+    "start": 2.36,
+    "end": 2.63,
+    "id": "w6"
+  },
+  {
+    "text": "covered",
+    "start": 2.94,
+    "end": 3.41,
+    "id": "w7"
+  },
+  {
+    "text": "hospital",
+    "start": 3.41,
+    "end": 4.2,
+    "id": "w8"
+  },
+  {
+    "text": "and",
+    "start": 4.2,
+    "end": 4.38,
+    "id": "w9"
+  },
+  {
+    "text": "outpatient",
+    "start": 4.38,
+    "end": 5,
+    "id": "w10"
+  },
+  {
+    "text": "medical",
+    "start": 5,
+    "end": 5.31,
+    "id": "w11"
+  },
+  {
+    "text": "bills",
+    "start": 5.32,
+    "end": 5.69,
+    "id": "w12"
+  },
+  {
+    "text": "are",
+    "start": 5.7,
+    "end": 5.86,
+    "id": "w13"
+  },
+  {
+    "text": "covered",
+    "start": 5.86,
+    "end": 6.54,
+    "id": "w14"
+  },
+  {
+    "text": "at",
+    "start": 6.54,
+    "end": 6.73,
+    "id": "w15"
+  },
+  {
+    "text": "100%.",
+    "start": 6.73,
+    "end": 8,
+    "id": "w16"
+  }
+]

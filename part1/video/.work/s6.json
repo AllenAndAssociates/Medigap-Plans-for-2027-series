@@ -1,0 +1,140 @@
+[
+  {
+    "text": "Want",
+    "start": 0.3,
+    "end": 0.31,
+    "id": "w0"
+  },
+  {
+    "text": "to",
+    "start": 0.31,
+    "end": 0.46,
+    "id": "w1"
+  },
+  {
+    "text": "compare",
+    "start": 0.46,
+    "end": 1.01,
+    "id": "w2"
+  },
+  {
+    "text": "Medigap",
+    "start": 1.01,
+    "end": 1.54,
+    "id": "w3"
+  },
+  {
+    "text": "rates",
+    "start": 1.54,
+    "end": 1.93,
+    "id": "w4"
+  },
+  {
+    "text": "in",
+    "start": 1.93,
+    "end": 2.08,
+    "id": "w5"
+  },
+  {
+    "text": "your",
+    "start": 2.08,
+    "end": 2.39,
+    "id": "w6"
+  },
+  {
+    "text": "area?",
+    "start": 2.39,
+    "end": 3,
+    "id": "w7"
+  },
+  {
+    "text": "Comment",
+    "start": 3.3,
+    "end": 3.82,
+    "id": "w8"
+  },
+  {
+    "text": "guide",
+    "start": 3.82,
+    "end": 4.4,
+    "id": "w9"
+  },
+  {
+    "text": "below",
+    "start": 4.4,
+    "end": 5,
+    "id": "w10"
+  },
+  {
+    "text": "and",
+    "start": 5,
+    "end": 5.17,
+    "id": "w11"
+  },
+  {
+    "text": "we",
+    "start": 5.19,
+    "end": 5.3,
+    "id": "w12"
+  },
+  {
+    "text": "will",
+    "start": 5.3,
+    "end": 5.54,
+    "id": "w13"
+  },
+  {
+    "text": "send",
+    "start": 5.54,
+    "end": 5.61,
+    "id": "w14"
+  },
+  {
+    "text": "our",
+    "start": 5.61,
+    "end": 6,
+    "id": "w15"
+  },
+  {
+    "text": "free",
+    "start": 6,
+    "end": 6.2,
+    "id": "w16"
+  },
+  {
+    "text": "comparison",
+    "start": 6.4,
+    "end": 6.72,
+    "id": "w17"
+  },
+  {
+    "text": "guide",
+    "start": 6.8,
+    "end": 7,
+    "id": "w18"
+  },
+  {
+    "text": "plus",
+    "start": 7,
+    "end": 7.56,
+    "id": "w19"
+  },
+  {
+    "text": "a",
+    "start": 7.56,
+    "end": 7.62,
+    "id": "w20"
+  },
+  {
+    "text": "rate",
+    "start": 7.95,
+    "end": 8.28,
+    "id": "w21"
+  },
+  {
+    "text": "check.",
+    "start": 8.28,
+    "end": 9,
+    "id": "w22"
+  }
+]

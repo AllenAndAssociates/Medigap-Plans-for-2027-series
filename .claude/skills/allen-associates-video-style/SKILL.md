@@ -1,0 +1,54 @@
+---
+name: allen-associates-video-style
+description: Style guide and debugging playbook for Arric Allen's "Allen & Associates Insurance Agency" talking-head promo video series, built with HyperFrames. Use this whenever Arric asks to create, edit, extend, or continue a video for Allen & Associates (any "Part N" video, a Medicare/insurance-agent promo, or anything referencing this HyperFrames video series) — even if he doesn't repeat the format/style/music preferences he's already given, since they should carry over by default. Also consult it whenever building a HyperFrames composition with a portrait 9:16 talking-head avatar, camera push-in zooms on cropped footage, or background b-roll video behind graphic cutaways — the technical pitfalls here are easy to hit and non-obvious to debug from scratch.
+---
+
+# Allen & Associates video style
+
+Preferences and hard-won debugging lessons from building this client's HyperFrames promo video series. Apply the defaults below without being asked again; only deviate if Arric says otherwise for a specific video.
+
+## Defaults for this client
+
+- **Format**: 9:16 vertical/portrait, unless told otherwise.
+- **Music**: default to **no background music**. If he asks for one, keep it far quieter than a normal duck level (~0.05–0.10 gain under the voice, lower still isn't wrong) and skip generic corporate-acoustic-guitar stock cues — check the intended mood/instrumentation with him first, and prefer something genuinely topic-matched (e.g. a calm "medical/educational" bed for Medicare content) over a generic upbeat corporate track.
+- **Visual density**: this client finds a plain talking-head-plus-captions video dull. Proactively build in motion graphics and b-roll rather than waiting to be asked:
+  - Accumulating icon-chip rows for anything spoken as a list (e.g. "licensed → contract → leads").
+  - Icon-card rows with a strike-through wipe for negation statements ("no training, no mentor, no system") and with checkmarks for positive/resolution statements.
+  - A simple animated line chart for trend statements ("the leads dry up").
+  - Short real b-roll cutaways (free Pexels stock, see below) for abstract/emotional beats — isolation at a laptop, phone calls, mentorship/coaching, a handshake/deal.
+- **Brand kit**: `--brand-blue #0092d8` (text `#005f96`), `--brand-green #5cb128` (text `#3f8a1c`), `--navy #0b1622`, `--paper #fbfcfa`; font Montserrat; phone `800-324-9986`; end card is the "Allen & Associates Insurance Agency — Making Medicare Easy" logo lockup.
+- **Review workflow**: after any edit, re-render and send him the actual video file. He evaluates by watching, not by reading a description of the change.
+- **Cut pacing: target ~0.5–0.75s breathing pauses, not zero.** Feedback swung both directions across one video's revisions (Sept 2026): draft 1's 0.5–2s silences read as sluggish and got ripple-deleted to near-zero for drafts 2–3, but that then read as rushed and unnatural for calm/authoritative educational content (Medicare topics want "steady, measured" delivery, not Shorts-style jump-cut speed) — the settled note asked to relax the just-tightened cuts back out by ~2–3s total. Default target: **~0.5–0.75s of natural pause after a key claim or point lands**, before cutting to the next beat; not the near-zero "seamless jump-cut" some short-form advice suggests, and not the original 1–2s dead air either. Measure actual silence per-clip with `ffmpeg -i clip.mp4 -af silencedetect=noise=-35dB:d=0.05 -f null -` (word-timestamp transcripts often understate true silence — STS-converted or freshly-generated audio can have a soft onset/decay the ASR doesn't count) and trim or extend to land in that range, confirming with the same tool on the assembled render afterward. If a clip's own footage runs out before reaching the target pause (e.g. it was trimmed tight in an earlier pass), extract a still of the subject's settled/calm last frame (`ffmpeg -ss <t> -i clip.mp4 -frames:v 1 hold.jpg`) and insert it as a brief `<img>` freeze-hold between the two clips rather than trying to stretch a `<video>`/`<audio>` element's `data-duration` past its actual media length — that just gets silently clamped back to the true length for audio and fails frame extraction (renders black) for video; there is no automatic hold-last-frame behavior in this renderer. Keep push-in zooms subtle (~5–6% scale, not 8–9%) so they read as visual variation rather than another jump.
+- **State exact figures, not vague direction.** When a script says a number "is changing/adjusting/shifting" without the actual figure, that reads as vague. Get the real number from Arric (or flag it as missing) and put it in the script/voiceover before recording — a stated amount ("the cap is rising to $2,400") lands as more authoritative than a direction-only claim.
+
+## HyperFrames pitfalls hit while building this series
+
+Each of these produced a real, confusing bug — check/snapshot after every edit (`npx hyperframes check`, then `npx hyperframes snapshot . --at <times>`) to catch them before spending a full render cycle finding out the hard way.
+
+**1. Anchor zoom origin at the subject's real hairline, not a guess.**
+A CSS `transform-origin` below the subject's head will push the head *up and out of frame* as you zoom in, instead of cropping the body below — the opposite of what a push-in should do. Before picking an origin, measure it: extract a raw frame and scan a center pixel column for where the tone shifts from background to hair/skin, then use that fraction of the frame height as the origin's y-value.
+
+**2. On a 9:16 canvas, `object-fit: cover` already fixes pillarboxed source footage — don't also hand-correct it.**
+A 9:16 target showing 16:9-ish pillarboxed source doesn't need the manual non-uniform `scaleX`/`scaleY` split that a 16:9 target needs — plain `cover` handles it. Any additional GSAP zoom `scale` layered on top must stay **≥ 1**: `cover` already picked the minimum scale to fill the box, so going below 1 just shrinks the element inside its own box and reveals background at the edges.
+
+**3. Never nest a second timed element inside an already-timed wrapper.**
+A background `<video data-start="...">` placed inside a cutaway `<div data-start="...">` makes the frame extractor and the visibility logic resolve two different offsets and disagree (`video_nested_in_timed_element` in the linter). Fix: hoist the video to be a **sibling** of the wrapper with matching `data-start`/`data-duration` — both absolutely positioned over the same area works fine since they share the same positioned ancestor.
+
+**4. A foreground card's own opaque `background` will hide a b-roll video behind it, no matter how transparent the scrim is.**
+If a cutaway/card element has something like `background: var(--navy)` and a background video + darkening scrim sit behind it as siblings, that opaque background paints over everything behind it — the video will look like it's simply not rendering, even though it loaded and is timed correctly. Drop the opaque background from any card meant to show video through it.
+
+**5. Sourcing free b-roll: Pexels Video API.**
+`GET https://api.pexels.com/videos/search` with header `Authorization: <API_KEY>`, `orientation=portrait` for 9:16 work, `per_page`. Pick an entry from the response's `video_files` array with `quality: "hd"` and download its `link` directly. Arric has his own free key from pexels.com/api — ask him for it each time (or have him export `PEXELS_API_KEY` himself); don't write the raw key into any saved file.
+
+**6. Keep bottom-card/lower-third graphics clear of the platform-UI safe zone.**
+Client feedback on a draft 1 (Sept 2026): a full-width bottom card (icon-chip list, CTA pill, mailbox callout, etc.) that runs all the way to the frame's bottom edge risks sitting under TikTok/YouTube Shorts/Reels' own UI (caption bar, like/comment/share stack, profile chip) once posted. Keep the lowest line of any bottom-card content comfortably clear of the bottom ~150–200px of a 1920px-tall 9:16 frame — treat that band as a safe-zone margin, not usable canvas, even though it renders fine in the raw MP4.
+
+**7. Prefer generating fresh avatar footage on HeyGen over voice-converting existing clips — it's the only way to change the spoken words without breaking lip-sync.**
+Arric has a real trained HeyGen avatar group named "Arric Holding a Mic" (`avatar_id: f637fbaa33e846dbbe1935b00e4a48a1`, matches the handheld-mic requirement) and a real private cloned voice named "Arric" (`voice_id: 6f09cad7796d4aa0b1458c35a597023f`, confirmed via `heygen voice list --type private`). Generate scenes directly with both:
+```
+heygen video create --wait --timeout 15m -d '{"type":"avatar","avatar_id":"f637fbaa33e846dbbe1935b00e4a48a1","voice_id":"6f09cad7796d4aa0b1458c35a597023f","script":"...","aspect_ratio":"9:16","resolution":"1080p","fit":"cover"}'
+```
+This gets correct lip-sync **and** his real voice in one step, and — critically — is the only way to change the actual spoken script (e.g. add a number that wasn't in a prior take): dubbing new audio onto existing avatar footage cannot fix lip-sync for the new words, since the mouth was rendered against the old script. Confirm ids first (`heygen avatar list --ownership private`, `heygen voice list --type private`) rather than assuming; a wrong/guessed avatar_id fails at generation time. Requires `heygen auth login` under Arric's account (check with `heygen auth status`). Each clip in this series has taken 8–20 min to render depending on script length; if `--wait` reports a job stuck in `processing` far past that (e.g. 45+ min with no error via `heygen video list`), tell Arric rather than waiting indefinitely — cancel with `heygen video delete <id> --force` and resubmit. HeyGen's generated clips also start speaking almost immediately with minimal lead/trail silence (~0.1–0.2s), so back-to-back scene concatenation needs little to no dead-air trimming, unlike stock-voice-converted clips.
+
+**7b. Fallback — ElevenLabs speech-to-speech, only when the words aren't changing.**
+If regenerating on HeyGen isn't wanted and the existing avatar clip's script is staying the same (just re-voicing a stock/placeholder narration as Arric), `$ELEVENLABS_API_KEY` in the shell may point at a *different* account than the one holding the "Arric Allen" ElevenLabs voice clone — `GET https://api.elevenlabs.io/v2/voices?page_size=100` and grep for `"name": "Arric Allen"` (category `cloned`) before assuming any key works. Use `POST /v1/speech-to-speech/{voice_id}` (`model_id=eleven_multilingual_sts_v2`) on the clip's *existing* narration audio — it preserves timing closely enough (~50ms drift on a 10s clip) to keep lip-sync intact, unlike fresh TTS which re-times the whole line. This cannot add or change words without desyncing the mouth — for that, use §7 instead.

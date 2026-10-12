@@ -1,0 +1,128 @@
+[
+  {
+    "text": "Want",
+    "start": 0.14,
+    "end": 0.3,
+    "id": "w0"
+  },
+  {
+    "text": "to",
+    "start": 0.3,
+    "end": 0.45,
+    "id": "w1"
+  },
+  {
+    "text": "compare",
+    "start": 0.45,
+    "end": 0.97,
+    "id": "w2"
+  },
+  {
+    "text": "2027",
+    "start": 1.09,
+    "end": 1.88,
+    "id": "w3"
+  },
+  {
+    "text": "Medigap",
+    "start": 1.88,
+    "end": 2.41,
+    "id": "w4"
+  },
+  {
+    "text": "rates",
+    "start": 2.41,
+    "end": 2.79,
+    "id": "w5"
+  },
+  {
+    "text": "in",
+    "start": 2.79,
+    "end": 2.94,
+    "id": "w6"
+  },
+  {
+    "text": "your",
+    "start": 2.94,
+    "end": 3.03,
+    "id": "w7"
+  },
+  {
+    "text": "area?",
+    "start": 3.13,
+    "end": 3.6,
+    "id": "w8"
+  },
+  {
+    "text": "Comment",
+    "start": 3.75,
+    "end": 4.25,
+    "id": "w9"
+  },
+  {
+    "text": "guide",
+    "start": 4.25,
+    "end": 4.72,
+    "id": "w10"
+  },
+  {
+    "text": "below",
+    "start": 4.72,
+    "end": 5.2,
+    "id": "w11"
+  },
+  {
+    "text": "and",
+    "start": 5.2,
+    "end": 5.34,
+    "id": "w12"
+  },
+  {
+    "text": "we",
+    "start": 5.34,
+    "end": 5.43,
+    "id": "w13"
+  },
+  {
+    "text": "will",
+    "start": 5.43,
+    "end": 5.61,
+    "id": "w14"
+  },
+  {
+    "text": "send",
+    "start": 5.68,
+    "end": 5.84,
+    "id": "w15"
+  },
+  {
+    "text": "you",
+    "start": 5.84,
+    "end": 6.08,
+    "id": "w16"
+  },
+  {
+    "text": "our",
+    "start": 6.08,
+    "end": 6.28,
+    "id": "w17"
+  },
+  {
+    "text": "free",
+    "start": 6.28,
+    "end": 6.55,
+    "id": "w18"
+  },
+  {
+    "text": "Medicare",
+    "start": 6.55,
+    "end": 6.66,
+    "id": "w19"
+  },
+  {
+    "text": "comparison.",
+    "start": 7.39,
+    "end": 7.84,
+    "id": "w20"
+  }
+]

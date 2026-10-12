@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Best Medigap Plans for 2027 - Part 2: Plan N vs Plan G</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #0b1622; }
+      body { font-family: "Montserrat", sans-serif; }
+      @font-face {
+        font-family: "Montserrat";
+        src: url("assets/fonts/Montserrat-Variable.woff2") format("woff2");
+        font-weight: 100 900; font-style: normal; font-display: block;
+      }
+      :root {
+        --brand-blue: #0092d8;
+        --brand-blue-text: #005f96;
+        --brand-green: #5cb128;
+        --brand-green-text: #3f8a1c;
+        --navy: #0b1622;
+        --paper: #fbfcfa;
+        --red: #e5484d;
+      }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--navy); }
+      .scene-video { position: absolute; top: 0; left: 0; width: 1080px; height: 1920px; object-fit: cover; }
+
+      /* floating cards: white for plan checklists, navy for labels */
+      .card-white {
+        position: absolute; background: #ffffff; border-radius: 22px; padding: 30px 32px;
+        box-shadow: 0 14px 40px rgba(0,0,0,0.35); color: var(--navy);
+      }
+      .card-white h3 { font-weight: 900; font-size: 46px; text-align: center; color: #2c3346; margin-bottom: 18px; }
+      .card-white ul { list-style: none; }
+      .card-white li { display: flex; align-items: flex-start; gap: 14px; font-weight: 700; font-size: 25px; line-height: 1.25; margin-bottom: 16px; }
+      .card-white li:last-child { margin-bottom: 0; }
+      .ic { flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%; background: var(--brand-green); display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+      .ic.no { background: var(--red); }
+      .ic svg { width: 22px; height: 22px; color: #fff; }
+      .bullets li { font-weight: 600; font-size: 34px; line-height: 1.2; margin-bottom: 22px; }
+      .bullets li .dot { flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; background: var(--navy); margin-top: 14px; }
+      .card-white.plan-n .title { font-weight: 800; font-size: 60px; text-align: center; color: #2c3346; margin-bottom: 30px; }
+      .card-white.plan-n .bullets li { font-size: 36px; }
+
+      .badge-navy {
+        position: absolute; background: #0b1622; color: var(--paper);
+        border-left: 8px solid var(--brand-green); border-radius: 18px; padding: 22px 26px;
+        font-weight: 800; font-size: 38px; line-height: 1.2; box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      }
+      .badge-navy.blue { border-left-color: var(--brand-blue); }
+      .badge-navy .k { color: var(--brand-green); font-weight: 900; }
+      .badge-navy.blue .k { color: #7fd0ff; }
+
+      .head-navy {
+        position: absolute; left: 60px; top: 80px; width: 860px; padding: 26px 34px;
+        background: rgba(11,22,34,0.94); border-left: 10px solid var(--brand-green); border-radius: 18px;
+        color: var(--paper); font-weight: 900; font-size: 64px; line-height: 1.1; letter-spacing: -0.01em;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      }
+      .sub-navy {
+        position: absolute; left: 90px; top: 240px; width: 320px; padding: 20px 24px;
+        background: rgba(11,22,34,0.94); border-radius: 18px; color: var(--paper);
+        font-weight: 800; font-size: 34px; line-height: 1.22; box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="30" data-width="1080" data-height="1920">
+
+      <!-- 0-10s: Plan G host (clean footage; garbled checklist covered by the card below) -->
+      <video id="v1" class="scene-video clip" src="media/n1.mp4" data-start="0" data-duration="10" data-track-index="0" muted playsinline></video>
+      <audio id="a1" src="media/n1.mp4" data-start="0" data-duration="10" data-track-index="10" data-volume="1"></audio>
+
+      <!-- 10-20s: Plan G recap -->
+      <video id="v2" class="scene-video clip" src="media/n2.mp4" data-start="10" data-duration="10" data-track-index="0" muted playsinline></video>
+      <audio id="a2" src="media/n2.mp4" data-start="10" data-duration="10" data-track-index="10" data-volume="1"></audio>
+      <div id="pg-card" class="card-white clip" data-start="10" data-duration="10" data-track-index="2" style="left: 40px; top: 290px; width: 430px; height: 660px;">
+        <h3>Plan G covers</h3>
+        <ul>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12.5 10 17.5 19 7"/></svg></span>Part A hospital deductible</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12.5 10 17.5 19 7"/></svg></span>Part A hospital coinsurance</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12.5 10 17.5 19 7"/></svg></span>Part B coinsurance</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12.5 10 17.5 19 7"/></svg></span>Part B excess charges</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12.5 10 17.5 19 7"/></svg></span>Foreign travel emergency care</li>
+          <li><span class="ic no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span>Part B deductible (you pay)</li>
+        </ul>
+      </div>
+
+      <!-- 20-30s: Plan N host with clean card (fixes the wrapped "copay") -->
+      <video id="v3" class="scene-video clip" src="media/n3.mp4" data-start="20" data-duration="10" data-track-index="0" muted playsinline></video>
+      <audio id="a3" src="media/n3.mp4" data-start="20" data-duration="10" data-track-index="10" data-volume="1"></audio>
+      <div id="pn-card" class="card-white plan-n clip" data-start="20" data-duration="10" data-track-index="2" style="left: 580px; top: 860px; width: 420px; height: 600px;">
+        <div class="title">Plan N</div>
+        <ul class="bullets">
+          <li><span class="dot"></span>Lower premium (usually)</li>
+          <li><span class="dot"></span>Up to $20 office visit copay</li>
+          <li><span class="dot"></span>Up to $50 ER copay (waived if admitted)</li>
+        </ul>
+      </div>
+
+          </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // Plan G card
+      tl.fromTo("#pg-card", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 10.2);
+      // Plan N card
+      tl.fromTo("#pn-card", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 20.2);
+      // Excess charges header and subtext
+      // Labels
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+[
+  {
+    "text": "We",
+    "start": 0.15,
+    "end": 0.17,
+    "id": "w0"
+  },
+  {
+    "text": "start",
+    "start": 0.17,
+    "end": 0.6,
+    "id": "w1"
+  },
+  {
+    "text": "with",
+    "start": 0.6,
+    "end": 0.94,
+    "id": "w2"
+  },
+  {
+    "text": "Medicare",
+    "start": 0.94,
+    "end": 1.62,
+    "id": "w3"
+  },
+  {
+    "text": "Supplement",
+    "start": 1.62,
+    "end": 2.49,
+    "id": "w4"
+  },
+  {
+    "text": "Plan",
+    "start": 2.49,
+    "end": 2.63,
+    "id": "w5"
+  },
+  {
+    "text": "G.",
+    "start": 2.83,
+    "end": 3.11,
+    "id": "w6"
+  },
+  {
+    "text": "It",
+    "start": 3.11,
+    "end": 3.21,
+    "id": "w7"
+  },
+  {
+    "text": "remains",
+    "start": 3.21,
+    "end": 3.6,
+    "id": "w8"
+  },
+  {
+    "text": "the",
+    "start": 3.6,
+    "end": 3.76,
+    "id": "w9"
+  },
+  {
+    "text": "most",
+    "start": 3.76,
+    "end": 4.01,
+    "id": "w10"
+  },
+  {
+    "text": "popular",
+    "start": 4.21,
+    "end": 4.64,
+    "id": "w11"
+  },
+  {
+    "text": "policy",
+    "start": 4.64,
+    "end": 5.28,
+    "id": "w12"
+  },
+  {
+    "text": "nationwide",
+    "start": 5.28,
+    "end": 6.08,
+    "id": "w13"
+  },
+  {
+    "text": "because",
+    "start": 6.23,
+    "end": 6.53,
+    "id": "w14"
+  },
+  {
+    "text": "it",
+    "start": 6.53,
+    "end": 6.65,
+    "id": "w15"
+  },
+  {
+    "text": "offers",
+    "start": 6.66,
+    "end": 7.05,
+    "id": "w16"
+  },
+  {
+    "text": "the",
+    "start": 7.05,
+    "end": 7.24,
+    "id": "w17"
+  },
+  {
+    "text": "most",
+    "start": 7.24,
+    "end": 7.49,
+    "id": "w18"
+  },
+  {
+    "text": "comprehensive",
+    "start": 7.51,
+    "end": 8.34,
+    "id": "w19"
+  },
+  {
+    "text": "coverage.",
+    "start": 8.34,
+    "end": 8.88,
+    "id": "w20"
+  }
+]

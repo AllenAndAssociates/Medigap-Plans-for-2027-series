@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Best Medigap Plans for 2027 - Part 2: Plan N vs Plan G</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #0b1622; }
+      body { font-family: "Montserrat", sans-serif; }
+      @font-face {
+        font-family: "Montserrat";
+        src: url("assets/fonts/Montserrat-Variable.woff2") format("woff2");
+        font-weight: 100 900; font-style: normal; font-display: block;
+      }
+      :root {
+        --brand-blue: #0092d8;
+        --brand-blue-text: #005f96;
+        --brand-green: #5cb128;
+        --brand-green-text: #3f8a1c;
+        --navy: #0b1622;
+        --paper: #fbfcfa;
+        --red: #e5484d;
+      }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--navy); }
+      .scene-video { position: absolute; top: 0; left: 0; width: 1080px; height: 1920px; object-fit: cover; }
+
+      /* floating cards: white for plan checklists, navy for labels */
+      .card-white {
+        position: absolute; background: #ffffff; border-radius: 22px; padding: 30px 32px;
+        box-shadow: 0 14px 40px rgba(0,0,0,0.35); color: var(--navy);
+      }
+      .card-white h3 { font-weight: 900; font-size: 46px; text-align: center; color: #2c3346; margin-bottom: 18px; }
+      .card-white ul { list-style: none; }
+      .card-white li { display: flex; align-items: flex-start; gap: 14px; font-weight: 700; font-size: 25px; line-height: 1.25; margin-bottom: 16px; }
+      .card-white li:last-child { margin-bottom: 0; }
+      .ic { flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%; background: var(--brand-green); display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+      .ic.no { background: var(--red); }
+      .ic svg { width: 22px; height: 22px; color: #fff; }
+      .bullets li { font-weight: 600; font-size: 34px; line-height: 1.2; margin-bottom: 22px; }
+      .bullets li .dot { flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; background: var(--navy); margin-top: 14px; }
+      .card-white.plan-n .title { font-weight: 800; font-size: 60px; text-align: center; color: #2c3346; margin-bottom: 30px; }
+      .card-white.plan-n .bullets li { font-size: 36px; }
+
+      .badge-navy {
+        position: absolute; background: #0b1622; color: var(--paper);
+        border-left: 8px solid var(--brand-green); border-radius: 18px; padding: 22px 26px;
+        font-weight: 800; font-size: 38px; line-height: 1.2; box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      }
+      .badge-navy.blue { border-left-color: var(--brand-blue); }
+      .badge-navy .k { color: var(--brand-green); font-weight: 900; }
+      .badge-navy.blue .k { color: #7fd0ff; }
+
+      .head-navy {
+        position: absolute; left: 60px; top: 80px; width: 860px; padding: 26px 34px;
+        background: rgba(11,22,34,0.94); border-left: 10px solid var(--brand-green); border-radius: 18px;
+        color: var(--paper); font-weight: 900; font-size: 64px; line-height: 1.1; letter-spacing: -0.01em;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      }
+      .sub-navy {
+        position: absolute; left: 90px; top: 240px; width: 320px; height: 252px; padding: 20px 24px;
+        background: rgba(11,22,34,0.94); border-radius: 18px; color: var(--paper);
+        font-weight: 800; font-size: 34px; line-height: 1.22; box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      }
+      .disc-banner {
+        position: absolute; left: 50px; top: 1250px; width: 980px; padding: 22px 28px;
+        background: rgba(11,22,34,0.88); color: #dbe7f1; border-radius: 16px;
+        font-weight: 500; font-size: 25px; line-height: 1.42; text-align: center; opacity: 0;
+      }
+      .glow { position:absolute; border-radius:50%; filter: blur(60px); }
+      .g1 { left:-200px; top:100px; width:700px; height:700px; background: radial-gradient(circle, rgba(92,177,40,0.35), rgba(92,177,40,0) 65%); }
+      .g2 { right:-250px; bottom:100px; width:800px; height:800px; background: radial-gradient(circle, rgba(0,146,216,0.3), rgba(0,146,216,0) 65%); }
+      .ctawrap { position:absolute; left:96px; right:96px; top:560px; }
+      .c-pill { display:inline-block; background:#5cb128; color:#0b1622; font-weight:800; font-size:30px; letter-spacing:0.08em; text-transform:uppercase; padding:14px 24px; border-radius:12px; opacity:0; }
+      .c-head { margin-top:34px; color:#fbfcfa; font-weight:900; font-size:104px; line-height:1.02; letter-spacing:-0.02em; opacity:0; }
+      .c-head .g { color:#5cb128; }
+      .c-sub { margin-top:36px; color:#fbfcfa; font-weight:700; font-size:50px; line-height:1.25; opacity:0; }
+      .c-btn { margin-top:60px; display:inline-block; background:#0092d8; color:#fff; font-weight:800; font-size:40px; padding:26px 40px; border-radius:22px; opacity:0; }
+      .c-rule { position:absolute; left:200px; right:200px; top:1296px; height:2px; background:rgba(169,194,214,0.5); transform:scaleX(0); }
+      .c-disc { position:absolute; left:110px; right:110px; top:1330px; text-align:center; color:#a9c2d6; font-weight:500; font-size:28px; line-height:1.5; opacity:0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="30" data-width="1080" data-height="1920">
+
+      <!-- 30-40s: Part B excess charges (clean header and subtext over the original) -->
+      <video id="v4" class="scene-video clip" src="media/n4.mp4" data-start="0" data-duration="10" data-track-index="0" muted playsinline></video>
+      <audio id="a4" src="media/n4.mp4" data-start="0" data-duration="10" data-track-index="10" data-volume="1"></audio>
+      <div id="head4" class="head-navy clip" data-start="0" data-duration="10" data-track-index="2">Part B excess charges</div>
+      <div id="sub4" class="sub-navy clip" data-start="0" data-duration="10" data-track-index="2">Up to 15% above Medicare&rsquo;s approved rate</div>
+
+      <!-- 40-50s: Plan N vs Plan G labels as badges -->
+      <video id="v5" class="scene-video clip" src="media/n5.mp4" data-start="10" data-duration="10" data-track-index="0" muted playsinline></video>
+      <audio id="a5" src="media/n5.mp4" data-start="10" data-duration="10" data-track-index="10" data-volume="1"></audio>
+      <div id="badge-n" class="badge-navy clip" data-start="10" data-duration="10" data-track-index="2" style="left: 20px; top: 400px; width: 380px; height: 400px; display: flex; flex-direction: column; justify-content: center;"><span class="k">Plan N:</span> lower premium, small copays</div>
+      <div id="badge-g" class="badge-navy blue clip" data-start="10" data-duration="10" data-track-index="2" style="left: 700px; top: 470px; width: 370px; height: 260px; display: flex; flex-direction: column; justify-content: center;"><span class="k">Plan G:</span> predictable costs</div>
+
+      <!-- 50-60s: Commenting-guide clip (clean take) + agency disclaimer banner -->
+      <video id="v7" class="scene-video clip" src="media/n7.mp4" data-start="20" data-duration="10" data-track-index="0" muted playsinline></video>
+      <audio id="a7" src="media/n7.mp4" data-start="20" data-duration="10" data-track-index="10" data-volume="1"></audio>
+      <div id="cov7" class="clip" data-start="20" data-duration="10" data-track-index="4" style="position:absolute; left:0; top:0; width:1080px; height:1920px; background:#0b1622; overflow:hidden; opacity:0;">
+        <div class="glow g1"></div><div class="glow g2"></div>
+        <div class="ctawrap">
+          <div id="c-kicker" class="c-pill">Free download</div>
+          <div id="c-head" class="c-head">Comment <span class="g">&ldquo;GUIDE&rdquo;</span></div>
+          <div id="c-sub" class="c-sub">for your free 2027 Side-by-Side Comparison Guide</div>
+          <div id="c-btn" class="c-btn">Comment &ldquo;GUIDE&rdquo; below</div>
+        </div>
+        <div id="c-rule" class="c-rule"></div>
+        <div id="c-disc" class="c-disc">Allen &amp; Associates Insurance Agency is a non-government entity. We do not offer every plan available in your area. Currently we represent 9 organizations in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options. Not all plans offer all benefits.</div>
+      </div>
+      <div id="dip2" class="clip" data-start="19.8" data-duration="0.5" data-track-index="9" style="position:absolute; left:0; top:0; width:1080px; height:1920px; background:#0b1622; opacity:0; z-index:50;"></div>
+      <div id="dip" class="clip" data-start="9.8" data-duration="0.5" data-track-index="9" style="position:absolute; left:0; top:0; width:1080px; height:1920px; background:#0b1622; opacity:0; z-index:50;"></div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // Plan G card
+      // Plan N card
+      // Excess charges header and subtext
+      tl.fromTo("#head4", { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }, 0.1);
+      tl.fromTo("#sub4", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 0.4);
+      // Labels
+      tl.fromTo("#badge-n", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.2, ease: "power2.out" }, 10.05);
+      tl.fromTo("#badge-g", { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.2, ease: "power2.out" }, 10.2);
+      tl.fromTo("#dip", { opacity: 0 }, { opacity: 1, duration: 0.1, ease: "power1.in" }, 9.9);
+      tl.to("#dip", { opacity: 0, duration: 0.12, ease: "power1.out" }, 10.0);
+      tl.fromTo("#dip2", { opacity: 0 }, { opacity: 1, duration: 0.1, ease: "power1.in" }, 19.9);
+      tl.to("#dip2", { opacity: 0, duration: 0.12, ease: "power1.out" }, 20.0);
+      tl.fromTo("#cov7", { opacity: 0 }, { opacity: 1, duration: 0.15, ease: "power1.out" }, 20.0);
+      tl.fromTo("#c-kicker", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 20.2);
+      tl.fromTo("#c-head", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 20.35);
+      tl.fromTo("#c-sub", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 22.4);
+      tl.fromTo("#c-btn", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 23.6);
+      tl.to("#c-btn", { scale: 1.05, duration: 0.3, yoyo: true, repeat: 3, ease: "sine.inOut" }, 24.4);
+      tl.fromTo("#c-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out" }, 20.6);
+      tl.fromTo("#c-disc", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }, 20.8);
+      tl.to("#cov7", { opacity: 0, duration: 0.3, ease: "power1.in" }, 29.7);
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

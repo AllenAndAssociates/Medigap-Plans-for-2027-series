@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Part 2 cover A: What Plan G covers</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0b1622; }
+      body { font-family: "Montserrat", sans-serif; }
+      @font-face {
+        font-family: "Montserrat";
+        src: url("assets/fonts/Montserrat-Variable.woff2") format("woff2");
+        font-weight: 100 900; font-style: normal; font-display: block;
+      }
+      :root {
+        --brand-blue: #0092d8;
+        --brand-green: #5cb128;
+        --brand-green-text: #3f8a1c;
+        --navy: #0b1622;
+        --paper: #fbfcfa;
+        --muted: #a9c2d6;
+        --red: #e5484d;
+      }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--navy); }
+      #root::before {
+        content: ""; position: absolute; inset: 0;
+        background: radial-gradient(circle at 80% 8%, rgba(0,146,216,0.28), rgba(0,146,216,0) 55%),
+                    radial-gradient(circle at 10% 92%, rgba(92,177,40,0.16), rgba(92,177,40,0) 50%);
+      }
+      .wrap { position: absolute; left: 96px; right: 96px; top: 420px; }
+      .pill {
+        display: inline-block; background: var(--brand-green); color: var(--navy);
+        font-weight: 800; font-size: 30px; letter-spacing: 0.08em; text-transform: uppercase;
+        padding: 14px 24px; border-radius: 12px; opacity: 0;
+      }
+      .title {
+        margin-top: 34px; color: var(--paper); font-weight: 900; font-size: 92px;
+        line-height: 1.04; letter-spacing: -0.02em; opacity: 0;
+      }
+      .title .accent { color: var(--brand-blue); }
+      .rows { margin-top: 70px; display: flex; flex-direction: column; gap: 30px; }
+      .row {
+        position: relative; display: flex; align-items: center; gap: 30px;
+        background: #ffffff; border-radius: 22px; padding: 30px 34px;
+        box-shadow: 0 14px 40px rgba(0,0,0,0.35); opacity: 0;
+      }
+      .ic {
+        flex: 0 0 auto; width: 64px; height: 64px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        background: var(--brand-green); color: #ffffff;
+      }
+      .ic svg { width: 40px; height: 40px; }
+      .ic.no { background: var(--red); }
+      .label { color: var(--navy); font-weight: 800; font-size: 42px; line-height: 1.15; position: relative; }
+      .label small { display: block; font-weight: 600; font-size: 28px; color: #4a5a6a; margin-top: 6px; }
+      .strike {
+        position: absolute; left: -6px; right: -6px; top: 50%; height: 6px; margin-top: -3px;
+        background: var(--red); transform-origin: 0 50%; transform: scaleX(0);
+      }
+      .tag {
+        margin-left: auto; flex: 0 0 auto; font-weight: 800; font-size: 26px; letter-spacing: 0.04em;
+        text-transform: uppercase; color: var(--red); border: 3px solid var(--red);
+        border-radius: 10px; padding: 8px 14px; opacity: 0;
+      }
+      .foot {
+        position: absolute; left: 96px; right: 96px; top: 1640px; color: var(--muted);
+        font-weight: 600; font-size: 28px; line-height: 1.4; opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="10" data-width="1080" data-height="1920">
+      <div class="wrap">
+        <div id="kicker" class="pill">Plan G</div>
+        <div id="title" class="title">What Plan G <span class="accent">covers</span></div>
+        <div class="rows">
+          <div class="row" id="r1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12.5 10 17.5 19 7"/></svg></div><div class="label">Part A hospital deductible</div></div>
+          <div class="row" id="r2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12.5 10 17.5 19 7"/></svg></div><div class="label">Part A hospital coinsurance</div></div>
+          <div class="row" id="r3"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12.5 10 17.5 19 7"/></svg></div><div class="label">Part B coinsurance</div></div>
+          <div class="row" id="r4"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12.5 10 17.5 19 7"/></svg></div><div class="label">Part B excess charges</div></div>
+          <div class="row" id="r5"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12.5 10 17.5 19 7"/></svg></div><div class="label">Foreign travel emergency care</div></div>
+          <div class="row" id="r6"><div class="ic no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></div><div class="label">Part B deductible<span class="strike" id="strike6"></span></div><div class="tag" id="tag6">You pay</div></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#kicker", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 0.1);
+      tl.fromTo("#title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.3);
+      [1, 2, 3, 4, 5].forEach((n, i) => {
+        tl.fromTo("#r" + n, { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 1.0 + i * 0.85);
+      });
+      tl.fromTo("#r6", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 5.4);
+      tl.fromTo("#strike6", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power2.inOut" }, 6.0);
+      tl.fromTo("#tag6", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 6.4);
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
